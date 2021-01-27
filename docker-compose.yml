@@ -1,0 +1,30 @@
+version: '3.1'
+
+volumes:
+  pgdata:
+
+services:
+  db:
+    image: postgres:11.2
+    depends_on:
+      - redis
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: Shop
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 4040:5432
+  backend:
+    image: shop-back
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+    environment:
+      - NODE_ENV=production
+  redis:
+    image: "redis:alpine"
