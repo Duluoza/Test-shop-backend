@@ -72,7 +72,7 @@ export class OrderController {
   /**
    * /updateOrder endpoint handler
    */
-  @RolesGuard(['seller'])
+  @RolesGuard(['seller', 'cashier'])
   @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'OK', type: PublicOrderDto })
   @Patch('/update')

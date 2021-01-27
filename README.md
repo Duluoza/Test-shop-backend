@@ -33,7 +33,7 @@ $ docker-compose up
 
 ​/order​/findAll - accountant , (format Date for From and To: 2021-01-27 or 2021-01-27T11:30)
 
-​/order​/update - seller
+​/order​/update - seller, cashier
 
 /bill/generate - cashier
 
