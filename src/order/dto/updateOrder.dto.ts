@@ -1,16 +1,16 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsIn, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsIn, IsNotEmpty, IsString } from "class-validator";
 import { arrayValidate } from "../enums/orderStatus";
 
 export class UpdateOrderDto {
     @ApiProperty({
         description: 'orderId',
         required: true,
-        format: 'number',
+        format: 'string',
     })
     @IsNotEmpty()
-    @IsNumber()
-    orderId: number;
+    @IsString()
+    orderId: string;
 
     @ApiProperty({
         description: 'status',

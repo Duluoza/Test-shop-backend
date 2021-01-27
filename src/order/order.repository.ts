@@ -63,7 +63,7 @@ export class OrderRepository {
     return result
   }
 
-  async findOneOrder(id: number): Promise<OrderModel> {
+  async findOneOrder(id: string): Promise<OrderModel> {
     return this.orderModel.findOne({
       where: {
         id: id
